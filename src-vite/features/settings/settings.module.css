@@ -1,0 +1,258 @@
+/* settings.module.css —— 设置面板样式（吃 ThemeProvider 注入的 CSS 变量）*/
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  background: var(--bg);
+  color: var(--text);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.root::-webkit-scrollbar {
+  width: 6px;
+}
+.root::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  gap: 12px;
+}
+.row + .row,
+.rowBordered {
+  border-top: 1px solid var(--border);
+}
+
+.rowText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.rowLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+.rowDesc {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+/* 分段选择 */
+.segment {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+}
+.segmentBtn {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+.segmentBtnActive {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* 主题色块 */
+.themeRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.themeDot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* range 滑块 */
+.range {
+  width: 140px;
+  accent-color: var(--accent);
+  height: 3px;
+}
+
+/* 模型选择下拉 */
+.select {
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+.btn {
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.btnPrimary {
+  background: var(--accent);
+  color: #fff;
+  border-color: transparent;
+}
+.btnDanger {
+  background: transparent;
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.45);
+}
+.btnDanger:hover {
+  background: rgba(239, 68, 68, 0.12);
+}
+.hint {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 6px;
+}
+.cleanupRow {
+  flex-direction: column;
+  align-items: stretch;
+}
+.cleanupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.value {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 数字输入框（自动关闭延时秒数） */
+.numInput {
+  width: 64px;
+  font-size: 13px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.numInput:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.textInput {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+}
+.textInput:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.textArea {
+  width: 100%;
+  min-height: 64px;
+  height: 72px;
+  resize: vertical;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+}
+.textArea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.appMeta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 4px 8px;
+  color: var(--text-faint);
+  font-size: 11px;
+}
+
+.version {
+  font-variant-numeric: tabular-nums;
+}
+
+.githubBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-dim);
+  font: inherit;
+  cursor: pointer;
+  transition: color 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+.githubBadge:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.githubBadge:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

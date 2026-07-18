@@ -1,0 +1,66 @@
+/* theme.module.css —— info-panel 基础样式（吃 ThemeProvider 注入的 CSS 变量）*/
+
+/* 细滚动条 */
+.scrollbarThin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.scrollbarThin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbarThin::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+.scrollbarThin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* markdown 容器 */
+.markdownContent {
+  font-size: 13px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+.markdownContent p {
+  margin: 0 0 6px;
+}
+.markdownContent p:last-child {
+  margin-bottom: 0;
+}
+.markdownContent pre {
+  background: rgba(127, 127, 127, 0.12);
+  border-radius: 8px;
+  padding: 8px 10px;
+  overflow-x: auto;
+  font-size: 12px;
+  margin: 6px 0;
+}
+.markdownContent code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+}
+.markdownContent :not(pre) > code {
+  background: rgba(127, 127, 127, 0.15);
+  border-radius: 4px;
+  padding: 1px 4px;
+}
+.markdownContent ul,
+.markdownContent ol {
+  margin: 4px 0;
+  padding-left: 18px;
+}
+.markdownContent a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.markdownContent a:hover {
+  text-decoration: underline;
+}
+
+/* 可选中文字（聊天区） */
+.selectableText {
+  -webkit-user-select: text;
+  user-select: text;
+}

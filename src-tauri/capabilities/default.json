@@ -1,0 +1,42 @@
+{
+  "identifier": "default",
+  "description": "Stackling 六窗口所需权限",
+  "windows": ["mascot", "panel", "settings", "completion", "chat-input", "chat-history"],
+  "permissions": [
+    "core:default",
+    "core:window:default",
+    "core:window:allow-show",
+    "core:window:allow-hide",
+    "core:window:allow-close",
+    "core:window:allow-set-position",
+    "core:window:allow-set-size",
+    "core:window:allow-set-focus",
+    "core:window:allow-set-always-on-top",
+    "core:window:allow-set-skip-taskbar",
+    "core:window:allow-start-dragging",
+    "core:window:allow-outer-position",
+    "core:window:allow-outer-size",
+    "core:window:allow-inner-size",
+    "core:window:allow-current-monitor",
+    "core:window:allow-scale-factor",
+    "core:window:allow-set-decorations",
+    "core:webview:default",
+    "core:event:default",
+    "core:event:allow-emit",
+    "core:event:allow-listen",
+    "core:app:default",
+    "store:default",
+    {
+      "identifier": "opener:allow-open-url",
+      "allow": [
+        {
+          "url": "https://github.com/kafuucoori/Stackling_Coding_Companion"
+        },
+        {
+          "url": "https://github.com/kafuucoori/Stackling_Coding_Companion/releases/latest"
+        }
+      ]
+    },
+    "autostart:default"
+  ]
+}
