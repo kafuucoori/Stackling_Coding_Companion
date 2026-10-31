@@ -1,0 +1,15 @@
+# deps & build
+node_modules/
+dist/
+*.tsbuildinfo
+# rust
+src-tauri/target/
+src-tauri/gen/
+# misc
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/

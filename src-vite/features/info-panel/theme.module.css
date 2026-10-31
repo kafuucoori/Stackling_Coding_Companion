@@ -1,0 +1,122 @@
+/* theme.module.css —— info-panel 基础样式（吃 ThemeProvider 注入的 CSS 变量）*/
+
+/* 细滚动条 */
+.scrollbarThin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.scrollbarThin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbarThin::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+.scrollbarThin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* markdown 容器 */
+.markdownContent {
+  font-size: 13px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+.markdownContent p {
+  margin: 0 0 6px;
+}
+.markdownContent p:last-child {
+  margin-bottom: 0;
+}
+.markdownContent pre {
+  background: rgba(127, 127, 127, 0.12);
+  border-radius: 8px;
+  padding: 8px 10px;
+  overflow-x: auto;
+  font-size: 12px;
+  margin: 6px 0;
+}
+.markdownContent code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+}
+.markdownContent :not(pre) > code {
+  background: rgba(127, 127, 127, 0.15);
+  border-radius: 4px;
+  padding: 1px 4px;
+}
+.markdownContent ul,
+.markdownContent ol {
+  margin: 4px 0;
+  padding-left: 18px;
+}
+.markdownContent a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.markdownContent a:hover {
+  text-decoration: underline;
+}
+
+/* 可选中文字（聊天区） */
+.selectableText {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.userMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  margin: 3px 0;
+}
+.userBubble {
+  box-sizing: border-box;
+  max-width: 88%;
+  min-width: 0;
+  padding: 9px 13px;
+  border-radius: 16px 16px 4px 16px;
+  background: var(--accent);
+  color: #fff;
+}
+.userBubble p { white-space: pre-wrap; }
+.userBubble a { color: inherit; text-decoration: underline; }
+.userBubble pre { background: rgba(0, 0, 0, 0.16); }
+.userBubble h1,
+.userBubble h2,
+.userBubble h3 { font-size: 14px; margin: 6px 0; }
+.userExpand {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding: 3px 0 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.messageContext {
+  box-sizing: border-box;
+  max-width: 88%;
+  padding: 5px 9px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  color: var(--text-dim);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.messageContext summary { cursor: pointer; overflow-wrap: anywhere; }
+.contextItem { margin-top: 8px; }
+.contextItem pre {
+  max-height: 180px;
+  overflow: auto;
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: 11px/1.6 ui-monospace, Consolas, monospace;
+  color: var(--text-dim);
+}

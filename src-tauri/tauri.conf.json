@@ -1,0 +1,132 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "Stackling",
+  "version": "1.0.0",
+  "identifier": "top.kafuucoori.stackling",
+  "mainBinaryName": "stackling",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5230",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "label": "mascot",
+        "title": "Stackling",
+        "url": "index.html#/mascot",
+        "width": 210,
+        "height": 430,
+        "x": 1400,
+        "y": 420,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": true
+      },
+      {
+        "label": "panel",
+        "title": "信息面板",
+        "url": "index.html#/panel",
+        "width": 360,
+        "height": 480,
+        "resizable": true,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": false
+      },
+      {
+        "label": "completion",
+        "title": "完成提示",
+        "url": "index.html#/completion",
+        "width": 320,
+        "height": 150,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "focus": false,
+        "visible": false
+      },
+      {
+        "label": "chat-input",
+        "title": "模型对话",
+        "url": "index.html#/chat-input",
+        "width": 300,
+        "height": 54,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": false
+      },
+      {
+        "label": "chat-history",
+        "title": "对话记录",
+        "url": "index.html#/chat-history",
+        "width": 320,
+        "height": 420,
+        "resizable": true,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": false
+      },
+      {
+        "label": "settings",
+        "title": "Stackling 设置",
+        "url": "index.html#/settings",
+        "width": 400,
+        "height": 600,
+        "resizable": true,
+        "decorations": true,
+        "transparent": false,
+        "alwaysOnTop": false,
+        "skipTaskbar": false,
+        "visible": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' customprotocol: asset:; connect-src 'self' ipc: http://ipc.localhost customprotocol: asset: http://asset.localhost; img-src 'self' asset: http://asset.localhost blob: data:; media-src 'self' asset: http://asset.localhost; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-eval'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "Stackling Project",
+    "copyright": "Copyright © 2026 Stackling Project",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      },
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["SimpChinese"],
+        "displayLanguageSelector": false,
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico",
+        "installerHooks": "windows/installer-hooks.nsh",
+        "startMenuFolder": "Stackling"
+      }
+    }
+  }
+}

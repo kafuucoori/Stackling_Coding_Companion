@@ -1,0 +1,19 @@
+{
+	"models": [
+		{
+			"id": "moran-hanfu",
+			"name": "墨染（汉服）",
+			"entry": "moran-hanfu/moran-hanfu.model3.json",
+			"thumbnail": "moran-hanfu/icon.png",
+			"layout": {
+				"fit": "contain",
+				"scale": 1,
+				"x": 0,
+				"y": 0,
+				"paddingX": 0,
+				"paddingTop": 10,
+				"paddingBottom": 0
+			}
+		}
+	]
+}
